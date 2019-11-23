@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "productId": 1,
+      "name": "Lamp shade",
+      "price": 23.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20
+    },
+    {
+      "productId": 2,
+      "name": "Candle",
+      "price": 10.8,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 10
+    },
+    {
+      "productId": 3,
+      "name": "Love sign",
+      "price": 5.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 15
+    },
+    {
+      "productId": 4,
+      "name": "Canvas",
+      "price": 30.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 2,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20
+    },
+    {
+      "productId": 5,
+      "name": "Mini Drawers",
+      "price": 40.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 2,
+      "package": ["basic", "classic", "premium"],
+      "stock": 59
+    },
+    {
+      "productId": 6,
+      "name": "Mini Lamp",
+      "price": 35.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 2,
+      "package": ["basic", "classic", "premium"],
+      "stock": 100
+    },
+    {
+      "productId": 7,
+      "name": "Table Topper",
+      "price": 50.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 3,
+      "package": ["basic", "classic", "premium"],
+      "stock": 80
+    },
+    {
+      "productId": 8,
+      "name": "Mug",
+      "price": 10.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 3,
+      "package": ["basic", "classic", "premium"],
+      "stock": 50
+    },
+    {
+      "productId": 9,
+      "name": "Sponge Holder",
+      "price": 32.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 3,
+      "package": ["basic", "classic", "premium"],
+      "stock": 203
+    },
+    {
+      "productId": 10,
+      "name": "Book",
+      "price": 30.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 4,
+      "package": ["classic", "premium"],
+      "stock": 28
+    },
+    {
+      "productId": 11,
+      "name": "Sofa Cover",
+      "price": 25.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 4,
+      "package": ["classic", "premium"],
+      "stock": 89
+    },
+    {
+      "productId": 12,
+      "name": "Apron",
+      "price": 27.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 4,
+      "package": ["classic", "premium"],
+      "stock": 56
+    },
+    {
+      "productId": 13,
+      "name": "Remote Holder",
+      "price": 270.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 5,
+      "package": ["premium"],
+      "stock": 56
+    },
+    {
+      "productId": 14,
+      "name": "Socks",
+      "price": 271.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 5,
+      "package": ["premium"],
+      "stock": 895
+    },
+    {
+      "productId": 15,
+      "name": "Dog Bed",
+      "price": 300.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 5,
+      "package": ["premium"],
+      "stock": 69
+    }
+  ]
+}
