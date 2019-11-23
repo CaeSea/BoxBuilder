@@ -10,7 +10,12 @@
         class="product-wrapper"
         style="display: inline-block; padding: 0 10px;"
       >
-        <p>{{ product.name }}</p>
+        <ng-container
+          *ngIf="product.package.includes('basic') && product.accordion === 1"
+        >
+          <p>{{ product.name }}</p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </ng-container>
       </div>
     </div>
     <button class="next-accordion">Next</button>
@@ -19,11 +24,18 @@
   <section class="product-accordion">
     <h2>Fill your boots!</h2>
     <div class="product-list">
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
-      </ul>
+      <div
+        *ngFor="let product of products"
+        class="product-wrapper"
+        style="display: inline-block; padding: 0 10px;"
+      >
+        <ng-container
+          *ngIf="product.package.includes('basic') && product.accordion === 2"
+        >
+          <p>{{ product.name }}</p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </ng-container>
+      </div>
     </div>
     <button class="next-accordion">Next</button>
   </section>
@@ -31,11 +43,18 @@
   <section class="product-accordion">
     <h2>Come get some...</h2>
     <div class="product-list">
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
-      </ul>
+      <div
+        *ngFor="let product of products"
+        class="product-wrapper"
+        style="display: inline-block; padding: 0 10px;"
+      >
+        <ng-container
+          *ngIf="product.package.includes('basic') && product.accordion === 3"
+        >
+          <p>{{ product.name }}</p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </ng-container>
+      </div>
     </div>
     <button class="next-accordion">Next</button>
   </section>
@@ -46,11 +65,18 @@
   >
     <h2>More!</h2>
     <div class="product-list">
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
-      </ul>
+      <div
+        *ngFor="let product of products"
+        class="product-wrapper"
+        style="display: inline-block; padding: 0 10px;"
+      >
+        <ng-container
+          *ngIf="product.package.includes('classic') && product.accordion === 4"
+        >
+          <p>{{ product.name }}</p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </ng-container>
+      </div>
     </div>
     <button class="next-accordion">Next</button>
   </section>
@@ -58,11 +84,18 @@
   <section *ngIf="boxType === 'large'" class="product-accordion">
     <h2>Last one, make it count!</h2>
     <div class="product-list">
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
-      </ul>
+      <div
+        *ngFor="let product of products"
+        class="product-wrapper"
+        style="display: inline-block; padding: 0 10px;"
+      >
+        <ng-container
+          *ngIf="product.package.includes('premium') && product.accordion === 5"
+        >
+          <p>{{ product.name }}</p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </ng-container>
+      </div>
     </div>
     <button class="next-accordion">Next</button>
   </section>
