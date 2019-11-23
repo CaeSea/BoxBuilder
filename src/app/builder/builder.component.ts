@@ -9,12 +9,28 @@ import { IProducts } from "../models/iProducts";
   styleUrls: ["./builder.component.css"]
 })
 export class BuilderComponent implements OnInit {
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+    this.getProducts();
+  }
 
   boxType: string;
   products: IProducts[];
 
   ngOnInit() {
+    this.checkBoxTypeChosen();
+  }
+
+  getProducts(): void {
+    this.dataService.getJsonData().subscribe(
+      data => {
+        this.products = data.products;
+        console.log(this.products);
+      },
+      err => console.log(err)
+    );
+  }
+
+  checkBoxTypeChosen(): void {
     if (this.dataService.boxTypeChosen === "") {
       if (sessionStorage.getItem("boxType") !== null) {
         this.boxType = sessionStorage.getItem("boxType");
@@ -24,7 +40,5 @@ export class BuilderComponent implements OnInit {
       sessionStorage.setItem("boxType", this.boxType);
       this.dataService.setBoxType(this.boxType);
     }
-    this.products = this.dataService.getProducts();
-    console.log(this.products);
   }
 }

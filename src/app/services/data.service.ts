@@ -11,14 +11,7 @@ export class DataService {
   products: IProducts[];
   boxTypeChosen: string = "";
 
-  constructor(private http: HttpClient) {
-    this.getJsonData().subscribe(
-      data => {
-        this.products = data;
-      },
-      err => console.log(err)
-    );
-  }
+  constructor(private http: HttpClient) {}
 
   setBoxType(type: string): void {
     this.boxTypeChosen = type;
@@ -26,9 +19,5 @@ export class DataService {
 
   getJsonData(): Observable<any> {
     return this.http.get("../../assets/products.json");
-  }
-
-  getProducts(): IProducts[] {
-    return this.products;
   }
 }

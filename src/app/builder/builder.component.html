@@ -5,11 +5,13 @@
   <section class="product-accordion">
     <h2>Pick here first</h2>
     <div class="product-list">
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
-      </ul>
+      <div
+        *ngFor="let product of products"
+        class="product-wrapper"
+        style="display: inline-block; padding: 0 10px;"
+      >
+        <p>{{ product.name }}</p>
+      </div>
     </div>
     <button class="next-accordion">Next</button>
   </section>
