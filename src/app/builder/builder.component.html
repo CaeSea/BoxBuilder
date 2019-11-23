@@ -1,1 +1,68 @@
-<a routerLink="/landing">Back</a>
+<h1>Build your box</h1>
+
+<section class="content-wrapper">
+  <section class="product-accordion">
+    <h2>Pick here first</h2>
+    <div class="product-list">
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+    </div>
+    <button class="next-accordion">Next</button>
+  </section>
+
+  <section class="product-accordion">
+    <h2>Fill your boots!</h2>
+    <div class="product-list">
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+    </div>
+    <button class="next-accordion">Next</button>
+  </section>
+
+  <section class="product-accordion">
+    <h2>Come get some...</h2>
+    <div class="product-list">
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+    </div>
+    <button class="next-accordion">Next</button>
+  </section>
+
+  <section
+    *ngIf="boxType === 'medium' || boxType === 'large'"
+    class="product-accordion"
+  >
+    <h2>More!</h2>
+    <div class="product-list">
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+    </div>
+    <button class="next-accordion">Next</button>
+  </section>
+
+  <section *ngIf="boxType === 'large'" class="product-accordion">
+    <h2>Last one, make it count!</h2>
+    <div class="product-list">
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+    </div>
+    <button class="next-accordion">Next</button>
+  </section>
+
+  <a routerLink="/landing">Back</a>
+</section>

@@ -9,7 +9,17 @@ import { DataService } from "../services/data.service";
 export class BuilderComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
+  boxType: string;
+
   ngOnInit() {
-    console.log(this.dataService.boxTypeChosen);
+    if (this.dataService.boxTypeChosen === "") {
+      if (sessionStorage.getItem("boxType") !== null) {
+        this.boxType = sessionStorage.getItem("boxType");
+      }
+    } else {
+      this.boxType = this.dataService.boxTypeChosen;
+      sessionStorage.setItem("boxType", this.boxType);
+      this.dataService.setBoxType(this.boxType);
+    }
   }
 }
