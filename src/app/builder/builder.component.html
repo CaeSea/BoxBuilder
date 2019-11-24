@@ -2,99 +2,17 @@
 <h2>You have chosen {{ boxType }}</h2>
 
 <section class="content-wrapper">
-  <section class="product-accordion">
-    <h2>Pick here first</h2>
+  <section *ngFor="let index of accordionCountArray" class="product-accordion">
+    <h2>{{ makeTitle(index) }}</h2>
     <div class="product-list">
       <div
-        *ngFor="let product of products"
         class="product-wrapper"
-        style="display: inline-block; padding: 0 10px;"
+        *ngFor="let product of sortedAccProducts[index]"
+        style="display: inline-block; padding: 0 10px"
       >
-        <ng-container
-          *ngIf="product.package.includes('basic') && product.accordion === 1"
-        >
-          <p>{{ product.name }}</p>
-          <img src="{{ product.image }}" alt="{{ product.name }}" />
-        </ng-container>
-      </div>
-    </div>
-    <button class="next-accordion">Next</button>
-  </section>
-
-  <section class="product-accordion">
-    <h2>Fill your boots!</h2>
-    <div class="product-list">
-      <div
-        *ngFor="let product of products"
-        class="product-wrapper"
-        style="display: inline-block; padding: 0 10px;"
-      >
-        <ng-container
-          *ngIf="product.package.includes('basic') && product.accordion === 2"
-        >
-          <p>{{ product.name }}</p>
-          <img src="{{ product.image }}" alt="{{ product.name }}" />
-        </ng-container>
-      </div>
-    </div>
-    <button class="next-accordion">Next</button>
-  </section>
-
-  <section class="product-accordion">
-    <h2>Come get some...</h2>
-    <div class="product-list">
-      <div
-        *ngFor="let product of products"
-        class="product-wrapper"
-        style="display: inline-block; padding: 0 10px;"
-      >
-        <ng-container
-          *ngIf="product.package.includes('basic') && product.accordion === 3"
-        >
-          <p>{{ product.name }}</p>
-          <img src="{{ product.image }}" alt="{{ product.name }}" />
-        </ng-container>
-      </div>
-    </div>
-    <button class="next-accordion">Next</button>
-  </section>
-
-  <section
-    *ngIf="boxType === 'medium' || boxType === 'large'"
-    class="product-accordion"
-  >
-    <h2>More!</h2>
-    <div class="product-list">
-      <div
-        *ngFor="let product of products"
-        class="product-wrapper"
-        style="display: inline-block; padding: 0 10px;"
-      >
-        <ng-container
-          *ngIf="product.package.includes('classic') && product.accordion === 4"
-        >
-          <p>{{ product.name }}</p>
-          <img src="{{ product.image }}" alt="{{ product.name }}" />
-        </ng-container>
-      </div>
-    </div>
-    <button class="next-accordion">Next</button>
-  </section>
-
-  <section *ngIf="boxType === 'large'" class="product-accordion">
-    <h2>Last one, make it count!</h2>
-    <div class="product-list">
-      <div
-        *ngFor="let product of products"
-        class="product-wrapper"
-        style="display: inline-block; padding: 0 10px;"
-      >
-        <ng-container
-          *ngIf="product.package.includes('premium') && product.accordion === 5"
-        >
-          <p>{{ product.name }}</p>
-          <img src="{{ product.image }}" alt="{{ product.name }}" />
-        </ng-container>
+        <p>{{ product.name }}</p>
+        <img src="{{ product.image }}" alt="{{ product.name }}" />
+        <button>Add</button>
       </div>
     </div>
     <button class="next-accordion">Next</button>
