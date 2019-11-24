@@ -18,10 +18,6 @@ export class BuilderComponent implements OnInit {
   accordionCount: number;
   accordionCountArray: number[] = [];
   sortedAccProducts = [];
-  // acc2Products: IProducts[] = [];
-  // acc3Products: IProducts[] = [];
-  // acc4Products: IProducts[] = [];
-  // acc5Products: IProducts[] = [];
 
   ngOnInit() {
     this.checkBoxTypeChosen();

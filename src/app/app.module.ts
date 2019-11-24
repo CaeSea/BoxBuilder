@@ -8,11 +8,25 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BuilderComponent } from "./builder/builder.component";
 import { LandingComponent } from "./landing/landing.component";
+import { CartComponent } from './cart/cart.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
-  declarations: [AppComponent, BuilderComponent, LandingComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      BuilderComponent,
+      LandingComponent,
+      CartComponent,
+      ProductComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule {}

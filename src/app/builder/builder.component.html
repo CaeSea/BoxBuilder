@@ -5,18 +5,16 @@
   <section *ngFor="let index of accordionCountArray" class="product-accordion">
     <h2>{{ makeTitle(index) }}</h2>
     <div class="product-list">
-      <div
-        class="product-wrapper"
+      <app-product
         *ngFor="let product of sortedAccProducts[index]"
-        style="display: inline-block; padding: 0 10px"
-      >
-        <p>{{ product.name }}</p>
-        <img src="{{ product.image }}" alt="{{ product.name }}" />
-        <button>Add</button>
-      </div>
+        [index]="index"
+        [product]="product"
+      ></app-product>
     </div>
     <button class="next-accordion">Next</button>
   </section>
+
+  <app-cart [boxType]="boxType"></app-cart>
 
   <a routerLink="/landing">Back</a>
 </section>
