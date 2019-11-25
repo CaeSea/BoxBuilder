@@ -11,12 +11,32 @@ import { CartService } from "../services/cart.service";
 export class ProductComponent implements OnInit {
   @Input() product: IProducts;
   @Input() index: number;
+  productInCart: boolean = false;
+  cartQuantity: number = 0;
 
   constructor(private cartService: CartService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.checkIfInCart();
+  }
 
-  addToCart(product: IProducts): void {
-    this.cartService.addProductToCart(product);
+  addToCart(): void {
+    this.cartService.addProductToCart(this.product);
+    this.productInCart = true;
+    this.cartQuantity++;
+  }
+
+  removeFromCart(): void {
+    //
+  }
+
+  checkIfInCart(): void {
+    const theProduct = this.cartService.cart.find(
+      p => p.productId === this.product.productId
+    );
+    if (theProduct) {
+      this.productInCart = true;
+      this.cartQuantity = theProduct.quantityOrdered;
+    }
   }
 }

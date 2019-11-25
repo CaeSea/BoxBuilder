@@ -1,5 +1,7 @@
 <div class="product-wrapper" style="display: inline-block; padding: 0 10px">
   <p>{{ product.name }}</p>
   <img src="{{ product.image }}" alt="{{ product.name }}" />
-  <button (click)="addToCart(product)">Add</button>
+  <button (click)="addToCart()">Add</button>
+  <button *ngIf="productInCart" (click)="removeFromCart()">Remove</button>
+  <p *ngIf="productInCart">{{ cartQuantity }} in cart.</p>
 </div>

@@ -6,7 +6,12 @@ import { IProducts } from "../models/iProducts";
   providedIn: "root"
 })
 export class CartService {
-  constructor() {}
+  constructor() {
+    if (sessionStorage.getItem("cart")) {
+      this.cart = JSON.parse(sessionStorage.getItem("cart"));
+      console.log(this.cart);
+    }
+  }
 
   cart: IProducts[] = [];
 
