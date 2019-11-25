@@ -26,4 +26,13 @@ export class CartService {
     }
     sessionStorage.setItem("cart", JSON.stringify(this.cart));
   }
+
+  removeProductFromCart(product: IProducts, removeAll: boolean): void {
+    const theProduct = this.cart.find(p => p.productId === product.productId);
+    if (removeAll) {
+      alert("true");
+    } else {
+      alert("false");
+    }
+  }
 }

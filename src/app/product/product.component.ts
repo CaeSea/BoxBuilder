@@ -26,8 +26,8 @@ export class ProductComponent implements OnInit {
     this.cartQuantity++;
   }
 
-  removeFromCart(): void {
-    //
+  removeFromCart(removeAll: boolean): void {
+    this.cartService.removeProductFromCart(this.product, removeAll);
   }
 
   checkIfInCart(): void {
