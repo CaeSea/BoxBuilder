@@ -1,7 +1,8 @@
 <div class="product-wrapper" style="display: inline-block; padding: 0 10px">
   <p>{{ product.name }}</p>
   <img src="{{ product.image }}" alt="{{ product.name }}" />
-  <button (click)="addToCart()">Add</button>
+  <button *ngIf="!productInCart" (click)="addToCart()">Add</button>
+  <button *ngIf="productInCart" (click)="addToCart()">Add another</button>
   <button *ngIf="productInCart" (click)="removeFromCart(false)">Remove</button>
   <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
     Remove All

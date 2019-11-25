@@ -30,9 +30,10 @@ export class CartService {
   removeProductFromCart(product: IProducts, removeAll: boolean): void {
     const theProduct = this.cart.find(p => p.productId === product.productId);
     if (removeAll) {
-      alert("true");
+      this.cart = this.cart.filter(p => p.productId !== product.productId);
     } else {
-      alert("false");
+      theProduct.quantityOrdered = theProduct.quantityOrdered - 1;
     }
+    sessionStorage.setItem("cart", JSON.stringify(this.cart));
   }
 }

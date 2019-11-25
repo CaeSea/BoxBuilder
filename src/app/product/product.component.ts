@@ -28,6 +28,16 @@ export class ProductComponent implements OnInit {
 
   removeFromCart(removeAll: boolean): void {
     this.cartService.removeProductFromCart(this.product, removeAll);
+    if (removeAll) {
+      this.cartQuantity = 0;
+      this.productInCart = false;
+    } else {
+      if (this.cartQuantity >= 1) {
+        this.cartQuantity--;
+      } else {
+        this.cartService.removeProductFromCart(this.product, true);
+      }
+    }
   }
 
   checkIfInCart(): void {
