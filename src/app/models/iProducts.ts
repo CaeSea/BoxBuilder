@@ -6,4 +6,5 @@ export interface IProducts {
   accordion: number;
   package: string[];
   stock: number;
+  quantityOrdered?: number;
 }

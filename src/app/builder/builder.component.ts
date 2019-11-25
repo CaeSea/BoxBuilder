@@ -43,7 +43,7 @@ export class BuilderComponent implements OnInit {
       acc4Products = [],
       acc5Products = [];
 
-    for (let product of this.products) {
+    for (const product of this.products) {
       switch (product.accordion) {
         case 1:
           acc1Products.push(product);
