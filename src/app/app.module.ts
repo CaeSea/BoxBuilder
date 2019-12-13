@@ -6,10 +6,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
-import { BuilderComponent } from "./builder/builder.component";
-import { LandingComponent } from "./landing/landing.component";
-import { CartComponent } from './cart/cart.component';
-import { ProductComponent } from './product/product.component';
+import { BuilderComponent } from "./components/builder/builder.component";
+import { LandingComponent } from "./components/./landing/landing.component";
+import { CartComponent } from './components/./cart/cart.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
    declarations: [
@@ -29,4 +29,4 @@ import { ProductComponent } from './product/product.component';
       AppComponent
    ]
 })
-export class AppModule {}
+export class AppModule { }

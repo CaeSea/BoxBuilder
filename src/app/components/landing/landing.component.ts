@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "../services/data.service";
+import { DataService } from "../../services/data.service";
 
 @Component({
   selector: "app-landing",
@@ -7,9 +7,9 @@ import { DataService } from "../services/data.service";
   styleUrls: ["./landing.component.css"]
 })
 export class LandingComponent implements OnInit {
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   setBoxType(type: string): void {
     this.dataService.setBoxType(type);

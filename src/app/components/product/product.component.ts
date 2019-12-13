@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
-import { IProducts } from "../models/iProducts";
-import { CartService } from "../services/cart.service";
+import { IProducts } from "../../models/iProducts";
+import { CartService } from "../../services/cart.service";
 
 @Component({
   selector: "app-product",
@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   productInCart: boolean = false;
   cartQuantity: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.checkIfInCart();

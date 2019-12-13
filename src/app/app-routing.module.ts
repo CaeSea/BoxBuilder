@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LandingComponent } from "./landing/landing.component";
-import { BuilderComponent } from "./builder/builder.component";
+import { LandingComponent } from "./components/landing/landing.component";
+import { BuilderComponent } from "./components/builder/builder.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/landing", pathMatch: "full" },
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
