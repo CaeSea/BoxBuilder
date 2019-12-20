@@ -1,0 +1,27 @@
+<h1>Build your box</h1>
+<h2>You have chosen {{ boxType }}</h2>
+
+<div class="content-wrapper">
+  <section class="product-accordion" style="width: 50%;">
+    <h2>{{ makeTitle(index) }}</h2>
+    <div class="product-list">
+      <mat-horizontal-stepper>
+        <mat-step *ngFor="let index of accordionCountArray" label="Step 1">
+          <app-product *ngFor="let product of sortedAccProducts[index]" [index]="index" [product]="product">
+          </app-product>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </section>
+  <section style="width: 50%;">
+    <app-cart [boxType]="boxType"></app-cart>
+  </section>
+
+
+  <a routerLink="/box-choice">Back</a>
+
+</div>

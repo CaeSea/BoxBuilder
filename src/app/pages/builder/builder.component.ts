@@ -1,27 +1,56 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "../../services/data.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
+import { DataService } from "../../services/data.service";
 import { IProducts } from "../../models/iProducts";
 
 @Component({
-  selector: "app-builder",
-  templateUrl: "./builder.component.html",
-  styleUrls: ["./builder.component.css"]
+  selector: 'app-builder',
+  templateUrl: './builder.component.html',
+  styleUrls: ['./builder.component.css']
 })
 export class BuilderComponent implements OnInit {
-  constructor(private dataService: DataService) {
-    this.getProducts();
-  }
+
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   boxType: string;
   products: IProducts[];
+  sortedAccProducts = [];
   accordionCount: number;
   accordionCountArray: number[] = [];
-  sortedAccProducts = [];
 
   ngOnInit() {
     this.checkBoxTypeChosen();
+    this.getProducts();
     this.setUpNumberOfAccordions();
+  }
+
+  makeTitle(index: number): string {
+    let title: string;
+    index = index + 1;
+    switch (index) {
+      case 1:
+        title = `${index}. Let's get started!`;
+        break;
+      case 2:
+        title = `${index}. And another...`;
+        break;
+      case 3:
+        title = `${index}. Get some more!`;
+        break;
+      case 4:
+        title = `${index}. More!`;
+        break;
+      case 5:
+        title = `${index}. Last one, make it count!`;
+        break;
+    }
+    return title;
+  }
+
+  checkBoxTypeChosen(): void {
+    this.boxType = this.route.snapshot.paramMap.get('type');
+    this.setBoxType(this.boxType);
   }
 
   getProducts(): void {
@@ -71,18 +100,6 @@ export class BuilderComponent implements OnInit {
     );
   }
 
-  checkBoxTypeChosen(): void {
-    if (this.dataService.boxTypeChosen === "") {
-      if (sessionStorage.getItem("boxType") !== null) {
-        this.boxType = sessionStorage.getItem("boxType");
-      }
-    } else {
-      this.boxType = this.dataService.boxTypeChosen;
-      sessionStorage.setItem("boxType", this.boxType);
-      this.dataService.setBoxType(this.boxType);
-    }
-  }
-
   setUpNumberOfAccordions(): void {
     switch (this.boxType) {
       case "basic":
@@ -100,26 +117,8 @@ export class BuilderComponent implements OnInit {
     }
   }
 
-  makeTitle(index): string {
-    let title: string;
-    index = index + 1;
-    switch (index) {
-      case 1:
-        title = `${index}. Let's get started!`;
-        break;
-      case 2:
-        title = `${index}. And another...`;
-        break;
-      case 3:
-        title = `${index}. Get some more!`;
-        break;
-      case 4:
-        title = `${index}. More!`;
-        break;
-      case 5:
-        title = `${index}. Last one, make it count!`;
-        break;
-    }
-    return title;
+  setBoxType(type: string): void {
+    this.dataService.setBoxType(type);
   }
+
 }

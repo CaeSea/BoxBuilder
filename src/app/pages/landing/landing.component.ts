@@ -7,11 +7,9 @@ import { DataService } from "../../services/data.service";
   styleUrls: ["./landing.component.css"]
 })
 export class LandingComponent implements OnInit {
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   ngOnInit() { }
 
-  setBoxType(type: string): void {
-    this.dataService.setBoxType(type);
-  }
+
 }
