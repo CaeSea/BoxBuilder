@@ -1,0 +1,17 @@
+.cart-wrapper {
+    width: 30%;
+
+    .cart {
+        display: flex;
+        flex-wrap: wrap;
+
+        .cart-product {
+
+            width: 100%;
+
+            .cart-product-image {
+                width: 50px;
+            }
+        }
+    }
+}

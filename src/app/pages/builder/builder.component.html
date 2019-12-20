@@ -2,8 +2,10 @@
 <h2>You have chosen {{ boxType }}</h2>
 
 <div class="content-wrapper">
-  <section class="product-accordion" style="width: 50%;">
+  <section class="product-accordion">
+
     <h2>{{ makeTitle(index) }}</h2>
+
     <div class="product-list">
       <mat-horizontal-stepper>
         <mat-step *ngFor="let index of accordionCountArray" label="Step 1">
@@ -17,10 +19,10 @@
       </mat-horizontal-stepper>
     </div>
   </section>
-  <section style="width: 50%;">
+
+  <section class="cart-wrapper">
     <app-cart [boxType]="boxType"></app-cart>
   </section>
-
 
   <a routerLink="/box-choice">Back</a>
 

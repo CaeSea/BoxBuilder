@@ -23,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
    declarations: [
@@ -46,7 +48,9 @@ import { MatStepperModule } from '@angular/material/stepper';
       MatIconModule,
       MatListModule,
       MatTabsModule,
-      MatStepperModule
+      MatStepperModule,
+      MatCardModule,
+      MatExpansionModule
    ],
    exports: [
       MatMenuModule,
@@ -55,7 +59,9 @@ import { MatStepperModule } from '@angular/material/stepper';
       MatIconModule,
       MatListModule,
       MatTabsModule,
-      MatStepperModule
+      MatStepperModule,
+      MatCardModule,
+      MatExpansionModule
    ],
    providers: [],
    bootstrap: [
