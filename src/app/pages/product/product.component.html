@@ -9,7 +9,11 @@
         <button class="button-add" *ngIf="!productInCart" (click)="addToCart()">
           Add
         </button>
-        <button class="button-add" *ngIf="productInCart" (click)="addToCart()">
+        <button
+          class="button-add"
+          *ngIf="productInCart && product.max !== product.quantityOrdered"
+          (click)="addToCart()"
+        >
           Add another
         </button>
         <button

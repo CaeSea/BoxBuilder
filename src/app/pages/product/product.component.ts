@@ -34,9 +34,6 @@ export class ProductComponent implements OnInit {
     } else {
       if (this.cartQuantity >= 2) {
         this.cartQuantity--;
-      } else {
-        this.productInCart = false;
-        this.cartQuantity = 0;
       }
     }
   }

@@ -7,7 +7,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 1,
       "package": ["basic", "classic", "premium"],
-      "stock": 20
+      "stock": 20,
+      "max": 1
     },
     {
       "productId": 2,
@@ -16,7 +17,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 1,
       "package": ["basic", "classic", "premium"],
-      "stock": 10
+      "stock": 10,
+      "max": 2
     },
     {
       "productId": 3,
@@ -25,7 +27,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 1,
       "package": ["basic", "classic", "premium"],
-      "stock": 15
+      "stock": 15,
+      "max": 3
     },
     {
       "productId": 4,
@@ -34,7 +37,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 2,
       "package": ["basic", "classic", "premium"],
-      "stock": 20
+      "stock": 20,
+      "max": 1
     },
     {
       "productId": 5,
@@ -43,7 +47,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 2,
       "package": ["basic", "classic", "premium"],
-      "stock": 59
+      "stock": 59,
+      "max": 1
     },
     {
       "productId": 6,
@@ -52,7 +57,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 2,
       "package": ["basic", "classic", "premium"],
-      "stock": 100
+      "stock": 100,
+      "max": 2
     },
     {
       "productId": 7,
@@ -61,7 +67,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 3,
       "package": ["basic", "classic", "premium"],
-      "stock": 80
+      "stock": 80,
+      "max": 3
     },
     {
       "productId": 8,
@@ -70,7 +77,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 3,
       "package": ["basic", "classic", "premium"],
-      "stock": 50
+      "stock": 50,
+      "max": 1
     },
     {
       "productId": 9,
@@ -79,7 +87,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 3,
       "package": ["basic", "classic", "premium"],
-      "stock": 203
+      "stock": 203,
+      "max": 2
     },
     {
       "productId": 10,
@@ -88,7 +97,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 4,
       "package": ["classic", "premium"],
-      "stock": 28
+      "stock": 28,
+      "max": 3
     },
     {
       "productId": 11,
@@ -97,7 +107,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 4,
       "package": ["classic", "premium"],
-      "stock": 89
+      "stock": 89,
+      "max": 1
     },
     {
       "productId": 12,
@@ -106,7 +117,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 4,
       "package": ["classic", "premium"],
-      "stock": 56
+      "stock": 56,
+      "max": 2
     },
     {
       "productId": 13,
@@ -115,7 +127,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 5,
       "package": ["premium"],
-      "stock": 56
+      "stock": 56,
+      "max": 3
     },
     {
       "productId": 14,
@@ -124,7 +137,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 5,
       "package": ["premium"],
-      "stock": 895
+      "stock": 895,
+      "max": 1
     },
     {
       "productId": 15,
@@ -133,7 +147,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 5,
       "package": ["premium"],
-      "stock": 69
+      "stock": 69,
+      "max": 2
     },
     {
       "productId": 16,
@@ -142,7 +157,8 @@
       "image": "https://via.placeholder.com/150",
       "accordion": 1,
       "package": ["basic", "classic", "premium"],
-      "stock": 20
+      "stock": 20,
+      "max": 3
     }
   ]
 }

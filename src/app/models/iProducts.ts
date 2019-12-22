@@ -7,4 +7,5 @@ export interface IProducts {
   package: string[];
   stock: number;
   quantityOrdered?: number;
+  max: number;
 }
