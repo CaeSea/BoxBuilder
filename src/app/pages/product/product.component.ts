@@ -35,8 +35,8 @@ export class ProductComponent implements OnInit {
       if (this.cartQuantity >= 2) {
         this.cartQuantity--;
       } else {
-        this.cartService.removeProductFromCart(this.product, true);
         this.productInCart = false;
+        this.cartQuantity = 0;
       }
     }
   }
@@ -48,7 +48,6 @@ export class ProductComponent implements OnInit {
     if (theProduct) {
       this.productInCart = true;
       this.cartQuantity = theProduct.quantityOrdered;
-      console.log(this.cartQuantity);
     }
   }
 }

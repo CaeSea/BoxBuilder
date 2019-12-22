@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { CartService } from 'src/app/services/cart.service';
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { CartService } from "src/app/services/cart.service";
+import { Subscription } from "rxjs";
 
 import { IProducts } from "../../models/iProducts";
 
@@ -8,12 +9,18 @@ import { IProducts } from "../../models/iProducts";
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.css"]
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   @Input() boxType: string;
+  cartSubscription: Subscription;
   cart: IProducts[] = [];
   price: number;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) {
+    this.cartSubscription = this.cartService.getCart().subscribe(cart => {
+      this.cart = cart;
+      console.log(this.cart);
+    });
+  }
 
   ngOnInit() {
     this.setPrice();
@@ -28,5 +35,9 @@ export class CartComponent implements OnInit {
     } else {
       this.price = 34.99;
     }
+  }
+
+  ngOnDestroy() {
+    this.cartSubscription.unsubscribe();
   }
 }

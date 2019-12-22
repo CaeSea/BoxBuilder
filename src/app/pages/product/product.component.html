@@ -12,7 +12,14 @@
         <button class="button-add" *ngIf="productInCart" (click)="addToCart()">
           Add another
         </button>
-        <button *ngIf="productInCart" (click)="removeFromCart(false)">
+        <button
+          *ngIf="productInCart"
+          (click)="
+            product.quantityOrdered === 1
+              ? removeFromCart(true)
+              : removeFromCart(false)
+          "
+        >
           Remove
         </button>
         <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
