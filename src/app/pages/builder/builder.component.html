@@ -3,17 +3,34 @@
 
 <div class="content-wrapper">
   <section class="product-accordion">
-
     <h2>{{ makeTitle(index) }}</h2>
 
     <div class="product-list">
       <mat-horizontal-stepper>
         <mat-step *ngFor="let index of accordionCountArray" label="Step 1">
-          <app-product *ngFor="let product of sortedAccProducts[index]" [index]="index" [product]="product">
-          </app-product>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+          <div
+            class="products-wrapper"
+            *ngFor="let product of sortedAccProducts[index]"
+          >
+            <app-product [index]="index" [product]="product"> </app-product>
+          </div>
+          <div class="stepper-buttons-wrapper">
+            <button
+              id="step-back"
+              class="stepper-button"
+              mat-button
+              matStepperPrevious
+            >
+              Previous
+            </button>
+            <button
+              id="step-next"
+              class="stepper-button"
+              mat-button
+              matStepperNext
+            >
+              Next
+            </button>
           </div>
         </mat-step>
       </mat-horizontal-stepper>
@@ -25,5 +42,4 @@
   </section>
 
   <a routerLink="/box-choice">Back</a>
-
 </div>

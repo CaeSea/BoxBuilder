@@ -134,6 +134,15 @@
       "accordion": 5,
       "package": ["premium"],
       "stock": 69
+    },
+    {
+      "productId": 16,
+      "name": "Telly",
+      "price": 266.0,
+      "image": "https://via.placeholder.com/150",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20
     }
   ]
 }

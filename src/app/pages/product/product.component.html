@@ -1,11 +1,24 @@
-<div class="product-wrapper" style="display: inline-block; padding: 0 10px">
-  <p>{{ product.name }}</p>
-  <img src="{{ product.image }}" alt="{{ product.name }}" />
-  <button *ngIf="!productInCart" (click)="addToCart()">Add</button>
-  <button *ngIf="productInCart" (click)="addToCart()">Add another</button>
-  <button *ngIf="productInCart" (click)="removeFromCart(false)">Remove</button>
-  <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
-    Remove All
-  </button>
-  <p *ngIf="productInCart">{{ cartQuantity }} in cart.</p>
-</div>
+<mat-card class="product-card">
+  <div class="product-info">
+    <mat-card-title>{{ product.name }}</mat-card-title>
+  </div>
+  <mat-card-content>
+    <div class="product-wrapper" style="display: inline-block; padding: 0 10px">
+      <img src="{{ product.image }}" alt="{{ product.name }}" />
+      <div>
+        <button class="button-add" *ngIf="!productInCart" (click)="addToCart()">
+          Add
+        </button>
+        <button class="button-add" *ngIf="productInCart" (click)="addToCart()">
+          Add another
+        </button>
+        <button *ngIf="productInCart" (click)="removeFromCart(false)">
+          Remove
+        </button>
+        <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
+          Remove All
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

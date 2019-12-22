@@ -31,6 +31,7 @@ export class CartService {
     const theProduct = this.cart.find(p => p.productId === product.productId);
     if (removeAll) {
       this.cart = this.cart.filter(p => p.productId !== product.productId);
+      console.log(this.cart);
     } else {
       theProduct.quantityOrdered = theProduct.quantityOrdered - 1;
     }

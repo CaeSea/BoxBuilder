@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   productInCart: boolean = false;
   cartQuantity: number = 0;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
     this.checkIfInCart();
@@ -32,10 +32,11 @@ export class ProductComponent implements OnInit {
       this.cartQuantity = 0;
       this.productInCart = false;
     } else {
-      if (this.cartQuantity >= 1) {
+      if (this.cartQuantity >= 2) {
         this.cartQuantity--;
       } else {
         this.cartService.removeProductFromCart(this.product, true);
+        this.productInCart = false;
       }
     }
   }
@@ -47,6 +48,7 @@ export class ProductComponent implements OnInit {
     if (theProduct) {
       this.productInCart = true;
       this.cartQuantity = theProduct.quantityOrdered;
+      console.log(this.cartQuantity);
     }
   }
 }
