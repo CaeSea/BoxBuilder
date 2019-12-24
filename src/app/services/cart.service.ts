@@ -22,55 +22,16 @@ export class CartService {
   };
 
   editGroupCount(accordion: number, mode: string, numToRemove?: number): void {
-    console.log(numToRemove);
-    switch (accordion) {
-      case 1:
-        if (mode === "add") {
-          this.groupCount.accordion1 = this.groupCount.accordion1 + 1;
-        } else if (mode === "minusAll") {
-          this.groupCount.accordion1 = this.groupCount.accordion1 - numToRemove;
-        } else {
-          this.groupCount.accordion1 = this.groupCount.accordion1 - 1;
-        }
-        break;
-      case 2:
-        if (mode === "add") {
-          this.groupCount.accordion2 = this.groupCount.accordion2 + 1;
-        } else if (mode === "minusAll") {
-          this.groupCount.accordion2 = this.groupCount.accordion2 - numToRemove;
-        } else {
-          this.groupCount.accordion2 = this.groupCount.accordion2 - 1;
-        }
-        break;
-      case 3:
-        if (mode === "add") {
-          this.groupCount.accordion3 = this.groupCount.accordion3 + 1;
-        } else if (mode === "minusAll") {
-          this.groupCount.accordion3 = this.groupCount.accordion3 - numToRemove;
-        } else {
-          this.groupCount.accordion3 = this.groupCount.accordion3 - 1;
-        }
-        break;
-      case 4:
-        if (mode === "add") {
-          this.groupCount.accordion4 = this.groupCount.accordion4 + 1;
-        } else if (mode === "minusAll") {
-          this.groupCount.accordion4 = this.groupCount.accordion4 - numToRemove;
-        } else {
-          this.groupCount.accordion4 = this.groupCount.accordion4 - 1;
-        }
-        break;
-      case 5:
-        if (mode === "add") {
-          this.groupCount.accordion5 = this.groupCount.accordion5 + 1;
-        } else if (mode === "minusAll") {
-          this.groupCount.accordion5 = this.groupCount.accordion5 - numToRemove;
-        } else {
-          this.groupCount.accordion5 = this.groupCount.accordion5 - 1;
-        }
-        break;
+    if (mode === "add") {
+      this.groupCount[`accordion${accordion}`] =
+        this.groupCount[`accordion${accordion}`] + 1;
+    } else if (mode === "minusAll") {
+      this.groupCount[`accordion${accordion}`] =
+        this.groupCount[`accordion${accordion}`] - numToRemove;
+    } else {
+      this.groupCount[`accordion${accordion}`] =
+        this.groupCount[`accordion${accordion}`] - 1;
     }
-    console.log(this.groupCount);
   }
 
   sendCart(): void {

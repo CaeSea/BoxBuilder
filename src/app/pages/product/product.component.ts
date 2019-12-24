@@ -26,7 +26,6 @@ export class ProductComponent implements OnInit {
     this.productInCart = true;
     this.cartQuantity++;
     this.cartService.editGroupCount(this.product.accordion, "add");
-    console.log(this.cartService.groupCount);
   }
 
   removeFromCart(removeAll: boolean): void {
