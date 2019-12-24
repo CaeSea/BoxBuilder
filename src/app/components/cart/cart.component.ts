@@ -18,7 +18,6 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) {
     this.cartSubscription = this.cartService.getCart().subscribe(cart => {
       this.cart = cart;
-      console.log(this.cart);
     });
   }
 

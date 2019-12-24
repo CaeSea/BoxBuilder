@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   @Input() index: number;
   productInCart: boolean = false;
   cartQuantity: number = 0;
+  maxProductsFromGroup: boolean;
 
   constructor(private cartService: CartService) {}
 
@@ -24,18 +25,31 @@ export class ProductComponent implements OnInit {
     this.cartService.addProductToCart(this.product);
     this.productInCart = true;
     this.cartQuantity++;
+    this.cartService.editGroupCount(this.product.accordion, "add");
+    console.log(this.cartService.groupCount);
   }
 
   removeFromCart(removeAll: boolean): void {
+    let mode: string;
+    const cartQuantityBefore = this.cartQuantity;
+
     this.cartService.removeProductFromCart(this.product, removeAll);
+
     if (removeAll) {
       this.cartQuantity = 0;
       this.productInCart = false;
+      mode = "minusAll";
     } else {
       if (this.cartQuantity >= 2) {
         this.cartQuantity--;
+        mode = "minus";
       }
     }
+    this.cartService.editGroupCount(
+      this.product.accordion,
+      mode,
+      cartQuantityBefore
+    );
   }
 
   checkIfInCart(): void {

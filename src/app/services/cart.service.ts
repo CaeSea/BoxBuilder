@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { IProducts } from "../models/iProducts";
+import { IAccordionMaxProducts, IProducts } from "../models/iProducts";
 
 import { Observable, Subject } from "rxjs";
 
@@ -8,14 +8,70 @@ import { Observable, Subject } from "rxjs";
   providedIn: "root"
 })
 export class CartService {
-  constructor() {
-    if (sessionStorage.getItem("cart")) {
-      this.cart = JSON.parse(sessionStorage.getItem("cart"));
-    }
-  }
+  constructor() {}
 
   public cart: IProducts[] = [];
   private cartSubject = new Subject<IProducts[]>();
+
+  public groupCount: IAccordionMaxProducts = {
+    accordion1: 0,
+    accordion2: 0,
+    accordion3: 0,
+    accordion4: 0,
+    accordion5: 0
+  };
+
+  editGroupCount(accordion: number, mode: string, numToRemove?: number): void {
+    console.log(numToRemove);
+    switch (accordion) {
+      case 1:
+        if (mode === "add") {
+          this.groupCount.accordion1 = this.groupCount.accordion1 + 1;
+        } else if (mode === "minusAll") {
+          this.groupCount.accordion1 = this.groupCount.accordion1 - numToRemove;
+        } else {
+          this.groupCount.accordion1 = this.groupCount.accordion1 - 1;
+        }
+        break;
+      case 2:
+        if (mode === "add") {
+          this.groupCount.accordion2 = this.groupCount.accordion2 + 1;
+        } else if (mode === "minusAll") {
+          this.groupCount.accordion2 = this.groupCount.accordion2 - numToRemove;
+        } else {
+          this.groupCount.accordion2 = this.groupCount.accordion2 - 1;
+        }
+        break;
+      case 3:
+        if (mode === "add") {
+          this.groupCount.accordion3 = this.groupCount.accordion3 + 1;
+        } else if (mode === "minusAll") {
+          this.groupCount.accordion3 = this.groupCount.accordion3 - numToRemove;
+        } else {
+          this.groupCount.accordion3 = this.groupCount.accordion3 - 1;
+        }
+        break;
+      case 4:
+        if (mode === "add") {
+          this.groupCount.accordion4 = this.groupCount.accordion4 + 1;
+        } else if (mode === "minusAll") {
+          this.groupCount.accordion4 = this.groupCount.accordion4 - numToRemove;
+        } else {
+          this.groupCount.accordion4 = this.groupCount.accordion4 - 1;
+        }
+        break;
+      case 5:
+        if (mode === "add") {
+          this.groupCount.accordion5 = this.groupCount.accordion5 + 1;
+        } else if (mode === "minusAll") {
+          this.groupCount.accordion5 = this.groupCount.accordion5 - numToRemove;
+        } else {
+          this.groupCount.accordion5 = this.groupCount.accordion5 - 1;
+        }
+        break;
+    }
+    console.log(this.groupCount);
+  }
 
   sendCart(): void {
     this.cartSubject.next(this.cart);
@@ -34,7 +90,6 @@ export class CartService {
       product.quantityOrdered = 1;
       this.cart.push(product);
     }
-    sessionStorage.setItem("cart", JSON.stringify(this.cart));
     this.sendCart();
   }
 
@@ -45,7 +100,6 @@ export class CartService {
     } else {
       theProduct.quantityOrdered = theProduct.quantityOrdered - 1;
     }
-    sessionStorage.setItem("cart", JSON.stringify(this.cart));
     this.sendCart();
   }
 }

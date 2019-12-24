@@ -1,4 +1,5 @@
 export interface IProducts {
+  accordionMaxProducts: IAccordionMaxProducts[];
   productId: number;
   name: string;
   price: number;
@@ -8,4 +9,12 @@ export interface IProducts {
   stock: number;
   quantityOrdered?: number;
   max: number;
+}
+
+export interface IAccordionMaxProducts {
+  accordion1: number;
+  accordion2: number;
+  accordion3: number;
+  accordion4: number;
+  accordion5: number;
 }
