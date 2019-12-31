@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { DataService } from "../../services/data.service";
-import { IProducts } from "../../models/iProducts";
+import { IProducts, IAccordionMaxProducts } from "../../models/iProducts";
 
 @Component({
-  selector: 'app-builder',
-  templateUrl: './builder.component.html',
-  styleUrls: ['./builder.component.css']
+  selector: "app-builder",
+  templateUrl: "./builder.component.html",
+  styleUrls: ["./builder.component.css"]
 })
 export class BuilderComponent implements OnInit {
-
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   boxType: string;
   products: IProducts[];
@@ -49,7 +51,7 @@ export class BuilderComponent implements OnInit {
   }
 
   checkBoxTypeChosen(): void {
-    this.boxType = this.route.snapshot.paramMap.get('type');
+    this.boxType = this.route.snapshot.paramMap.get("type");
     this.setBoxType(this.boxType);
   }
 
@@ -59,9 +61,14 @@ export class BuilderComponent implements OnInit {
         this.products = data.products;
         console.log(this.products);
         this.sortProducts();
+        this.setAccordionMaxProducts(data.accordionMaxProducts);
       },
       err => console.log(err)
     );
+  }
+
+  setAccordionMaxProducts(accordionMaxProducts: IAccordionMaxProducts): void {
+    this.dataService.setAccordionMaxProducts(accordionMaxProducts);
   }
 
   sortProducts(): void {
@@ -121,4 +128,26 @@ export class BuilderComponent implements OnInit {
     this.dataService.setBoxType(type);
   }
 
+  addDisableButtonsClass(params: {
+    accordion: number;
+    disable: boolean;
+  }): void {
+    // TODO: Move this functionality to external JS
+    const { accordion, disable } = params;
+    const productWrappers = document.querySelectorAll(
+      `.products-wrapper-${accordion}`
+    );
+
+    if (disable) {
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < productWrappers.length; i++) {
+        productWrappers[i].classList.add("disabled");
+      }
+    } else {
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < productWrappers.length; i++) {
+        productWrappers[i].classList.remove("disabled");
+      }
+    }
+  }
 }

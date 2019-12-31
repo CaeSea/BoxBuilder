@@ -2,19 +2,34 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
-import { IProducts } from "../models/iProducts";
+import { IProducts, IAccordionMaxProducts } from "../models/iProducts";
 
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
   products: IProducts[];
+  accordionMaxProducts: IAccordionMaxProducts;
   boxTypeChosen: string = "";
+
+  disabledBeenAdded: boolean = false;
 
   constructor(private http: HttpClient) {}
 
+  setAccordionMaxProducts(accordionMaxProducts: IAccordionMaxProducts): void {
+    this.accordionMaxProducts = accordionMaxProducts;
+  }
+
   setBoxType(type: string): void {
     this.boxTypeChosen = type;
+  }
+
+  setAddButtonsDisabled(value: boolean) {
+    this.disabledBeenAdded = value;
+  }
+
+  getButtonsDisabled(): boolean {
+    return this.disabledBeenAdded;
   }
 
   getJsonData(): Observable<any> {

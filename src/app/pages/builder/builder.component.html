@@ -9,10 +9,15 @@
       <mat-horizontal-stepper>
         <mat-step *ngFor="let index of accordionCountArray" label="Step 1">
           <div
-            class="products-wrapper"
+            class="products-wrapper products-wrapper-{{ index + 1 }}"
             *ngFor="let product of sortedAccProducts[index]"
           >
-            <app-product [index]="index" [product]="product"> </app-product>
+            <app-product
+              [index]="index"
+              [product]="product"
+              (disableButtonsChange)="addDisableButtonsClass($event)"
+            >
+            </app-product>
           </div>
           <div class="stepper-buttons-wrapper">
             <button

@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 import { IProducts } from "../../models/iProducts";
 import { CartService } from "../../services/cart.service";
+import { DataService } from "src/app/services/data.service";
 
 @Component({
   selector: "app-product",
@@ -11,21 +12,42 @@ import { CartService } from "../../services/cart.service";
 export class ProductComponent implements OnInit {
   @Input() product: IProducts;
   @Input() index: number;
+  @Output() disableButtonsChange = new EventEmitter<{
+    accordion: number;
+    disable: boolean;
+  }>();
+
   productInCart: boolean = false;
   cartQuantity: number = 0;
   maxProductsFromGroup: boolean;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit() {
     this.checkIfInCart();
   }
 
   addToCart(): void {
+    const maxAllowedInAccordion: number = this.dataService.accordionMaxProducts[
+      `accordion${this.product.accordion}`
+    ];
+
     this.cartService.addProductToCart(this.product);
     this.productInCart = true;
     this.cartQuantity++;
-    this.cartService.editGroupCount(this.product.accordion, "add");
+
+    const numberOfProductsFromAccordion: number = this.cartService.editGroupCount(
+      this.product.accordion,
+      "add"
+    );
+
+    if (numberOfProductsFromAccordion === maxAllowedInAccordion) {
+      this.checkDisableAddButton(true);
+      this.dataService.setAddButtonsDisabled(true);
+    }
   }
 
   removeFromCart(removeAll: boolean): void {
@@ -47,8 +69,14 @@ export class ProductComponent implements OnInit {
       mode,
       this.cartQuantity
     );
+
     if (removeAll) {
       this.cartQuantity = 0;
+    }
+
+    if (this.dataService.getButtonsDisabled()) {
+      this.checkDisableAddButton(false);
+      this.dataService.setAddButtonsDisabled(false);
     }
   }
 
@@ -60,5 +88,13 @@ export class ProductComponent implements OnInit {
       this.productInCart = true;
       this.cartQuantity = theProduct.quantityOrdered;
     }
+  }
+
+  checkDisableAddButton(disable: boolean): void {
+    const params: { accordion: number; disable: boolean } = {
+      accordion: this.product.accordion,
+      disable
+    };
+    this.disableButtonsChange.emit(params);
   }
 }

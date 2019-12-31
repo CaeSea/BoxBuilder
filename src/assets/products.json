@@ -1,13 +1,11 @@
 {
-  "accordionMaxProducts": [
-    {
-      "accordion1": 3,
-      "accordion2": 3,
-      "accordion3": 2,
-      "accordion4": 2,
-      "accordion5": 5
-    }
-  ],
+  "accordionMaxProducts": {
+    "accordion1": 3,
+    "accordion2": 3,
+    "accordion3": 2,
+    "accordion4": 2,
+    "accordion5": 5
+  },
   "products": [
     {
       "productId": 1,

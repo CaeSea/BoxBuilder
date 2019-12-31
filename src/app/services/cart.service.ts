@@ -21,7 +21,11 @@ export class CartService {
     accordion5: 0
   };
 
-  editGroupCount(accordion: number, mode: string, numToRemove?: number): void {
+  editGroupCount(
+    accordion: number,
+    mode: string,
+    numToRemove?: number
+  ): number {
     if (mode === "add") {
       this.groupCount[`accordion${accordion}`] =
         this.groupCount[`accordion${accordion}`] + 1;
@@ -32,7 +36,7 @@ export class CartService {
       this.groupCount[`accordion${accordion}`] =
         this.groupCount[`accordion${accordion}`] - 1;
     }
-    console.log(this.groupCount);
+    return this.groupCount[`accordion${accordion}`];
   }
 
   sendCart(): void {

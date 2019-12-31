@@ -8,6 +8,23 @@
     .products-wrapper {
       display: flex;
       min-width: 25%;
+
+      &-1,
+      &-2,
+      &-3,
+      &-4,
+      &-5 {
+        &.disabled {
+          button.button-add {
+            pointer-events: none;
+            background-color: $disabled-grey;
+
+            &:hover {
+              background-color: $disabled-grey;
+            }
+          }
+        }
+      }
     }
 
     .stepper-buttons-wrapper {
