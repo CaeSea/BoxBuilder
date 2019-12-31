@@ -32,6 +32,7 @@ export class CartService {
       this.groupCount[`accordion${accordion}`] =
         this.groupCount[`accordion${accordion}`] - 1;
     }
+    console.log(this.groupCount);
   }
 
   sendCart(): void {

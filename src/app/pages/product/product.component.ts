@@ -30,12 +30,10 @@ export class ProductComponent implements OnInit {
 
   removeFromCart(removeAll: boolean): void {
     let mode: string;
-    const cartQuantityBefore = this.cartQuantity;
 
     this.cartService.removeProductFromCart(this.product, removeAll);
 
     if (removeAll) {
-      this.cartQuantity = 0;
       this.productInCart = false;
       mode = "minusAll";
     } else {
@@ -47,8 +45,11 @@ export class ProductComponent implements OnInit {
     this.cartService.editGroupCount(
       this.product.accordion,
       mode,
-      cartQuantityBefore
+      this.cartQuantity
     );
+    if (removeAll) {
+      this.cartQuantity = 0;
+    }
   }
 
   checkIfInCart(): void {
