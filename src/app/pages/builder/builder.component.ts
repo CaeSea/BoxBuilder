@@ -15,11 +15,11 @@ export class BuilderComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  boxType: string;
-  products: IProducts[];
-  sortedAccProducts = [];
-  accordionCount: number;
-  accordionCountArray: number[] = [];
+  private boxType: string;
+  public products: IProducts[];
+  public sortedAccProducts = [];
+  private accordionCount: number;
+  public accordionCountArray: number[] = [];
 
   ngOnInit() {
     this.checkBoxTypeChosen();

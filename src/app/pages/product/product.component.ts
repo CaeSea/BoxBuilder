@@ -10,16 +10,16 @@ import { DataService } from "src/app/services/data.service";
   styleUrls: ["./product.component.css"]
 })
 export class ProductComponent implements OnInit {
-  @Input() product: IProducts;
-  @Input() index: number;
-  @Output() disableButtonsChange = new EventEmitter<{
+  @Input() private product: IProducts;
+  @Input() private index: number;
+  @Output() public disableButtonsChange = new EventEmitter<{
     accordion: number;
     disable: boolean;
   }>();
 
-  productInCart: boolean = false;
-  cartQuantity: number = 0;
-  maxProductsFromGroup: boolean;
+  private productInCart: boolean = false;
+  private cartQuantity: number = 0;
+  private maxProductsFromGroup: boolean;
 
   constructor(
     private cartService: CartService,

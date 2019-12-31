@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "../../services/data.service";
 
 @Component({
   selector: "app-landing",
@@ -7,9 +6,7 @@ import { DataService } from "../../services/data.service";
   styleUrls: ["./landing.component.css"]
 })
 export class LandingComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
-
-
+  ngOnInit() {}
 }

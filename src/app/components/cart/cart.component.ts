@@ -10,10 +10,10 @@ import { IProducts } from "../../models/iProducts";
   styleUrls: ["./cart.component.css"]
 })
 export class CartComponent implements OnInit, OnDestroy {
-  @Input() boxType: string;
-  cartSubscription: Subscription;
-  cart: IProducts[] = [];
-  price: number;
+  @Input() private boxType: string;
+  private cartSubscription: Subscription;
+  private cart: IProducts[] = [];
+  private price: number;
 
   constructor(private cartService: CartService) {
     this.cartSubscription = this.cartService.getCart().subscribe(cart => {

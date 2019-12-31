@@ -8,11 +8,11 @@ import { IProducts, IAccordionMaxProducts } from "../models/iProducts";
   providedIn: "root"
 })
 export class DataService {
-  products: IProducts[];
-  accordionMaxProducts: IAccordionMaxProducts;
-  boxTypeChosen: string = "";
+  public products: IProducts[];
+  public accordionMaxProducts: IAccordionMaxProducts;
+  public boxTypeChosen: string = "";
 
-  disabledBeenAdded: boolean = false;
+  public disabledBeenAdded: boolean = false;
 
   constructor(private http: HttpClient) {}
 
