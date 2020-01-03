@@ -28,6 +28,7 @@ export class BuilderComponent implements OnInit {
   }
 
   makeTitle(index: number): string {
+    console.log(index);
     let title: string;
     index = index + 1;
     switch (index) {

@@ -1,32 +1,13 @@
 <header>
-  <nav class="mobile-menu">
-    <a routerLink="/landing">
-      <h1>BoxBuilder</h1>
-    </a>
-    <mat-menu #appMenu="matMenu">
-      <a routerLink="/" mat-menu-item>Home</a>
-      <a routerLink="/box-choice" mat-menu-item>Build a box!</a>
-    </mat-menu>
-
-    <button class="menu-button" mat-icon-button [matMenuTriggerFor]="appMenu" role="navigation">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </nav>
-
   <section class="menu">
-    <mat-toolbar color="primary">
-      <div>
-        <a routerLink="/landing">
-          <h1>BoxBuilder</h1>
-        </a>
-      </div>
-      <nav>
-        <a routerLink="/">Home</a>
-        <a routerLink="/box-choice">Build a box</a>
-      </nav>
-    </mat-toolbar>
+    <div>
+      <a routerLink="/landing">
+        <h1>BoxBuilder</h1>
+      </a>
+    </div>
+    <nav>
+      <a routerLink="/">Home</a>
+      <a routerLink="/box-choice">Build a box</a>
+    </nav>
   </section>
-
-
-
 </header>

@@ -1,35 +1,29 @@
-<mat-card class="product-card">
-  <div class="product-info">
-    <mat-card-title>{{ product.name }}</mat-card-title>
+<div class="product-wrapper" style="display: inline-block; padding: 0 10px">
+  <h3>{{ product.name }}</h3>
+  <img src="{{ product.image }}" alt="{{ product.name }}" />
+  <div>
+    <button class="button-add" *ngIf="!productInCart" (click)="addToCart()">
+      Add
+    </button>
+    <button
+      class="button-add"
+      *ngIf="productInCart && product.max !== product.quantityOrdered"
+      (click)="addToCart()"
+    >
+      Add another
+    </button>
+    <button
+      *ngIf="productInCart"
+      (click)="
+        product.quantityOrdered === 1
+          ? removeFromCart(true)
+          : removeFromCart(false)
+      "
+    >
+      Remove
+    </button>
+    <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
+      Remove All
+    </button>
   </div>
-  <mat-card-content>
-    <div class="product-wrapper" style="display: inline-block; padding: 0 10px">
-      <img src="{{ product.image }}" alt="{{ product.name }}" />
-      <div>
-        <button class="button-add" *ngIf="!productInCart" (click)="addToCart()">
-          Add
-        </button>
-        <button
-          class="button-add"
-          *ngIf="productInCart && product.max !== product.quantityOrdered"
-          (click)="addToCart()"
-        >
-          Add another
-        </button>
-        <button
-          *ngIf="productInCart"
-          (click)="
-            product.quantityOrdered === 1
-              ? removeFromCart(true)
-              : removeFromCart(false)
-          "
-        >
-          Remove
-        </button>
-        <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
-          Remove All
-        </button>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+</div>

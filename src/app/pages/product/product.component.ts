@@ -28,6 +28,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.checkIfInCart();
+    console.log(this.product);
   }
 
   addToCart(): void {
