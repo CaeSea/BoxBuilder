@@ -6,8 +6,7 @@ import { IProducts, IAccordionMaxProducts } from "../../models/iProducts";
 
 @Component({
   selector: "app-builder",
-  templateUrl: "./builder.component.html",
-  styleUrls: ["./builder.component.css"]
+  templateUrl: "./builder.component.html"
 })
 export class BuilderComponent implements OnInit {
   constructor(

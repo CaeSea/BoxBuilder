@@ -6,8 +6,7 @@ import { DataService } from "src/app/services/data.service";
 
 @Component({
   selector: "app-product",
-  templateUrl: "./product.component.html",
-  styleUrls: ["./product.component.css"]
+  templateUrl: "./product.component.html"
 })
 export class ProductComponent implements OnInit {
   @Input() private product: IProducts;

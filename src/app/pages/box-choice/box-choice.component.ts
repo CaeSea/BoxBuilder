@@ -2,13 +2,10 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-box-choice",
-  templateUrl: "./box-choice.component.html",
-  styleUrls: ["./box-choice.component.css"]
+  templateUrl: "./box-choice.component.html"
 })
 export class BoxChoiceComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
-
-
+  ngOnInit() {}
 }
