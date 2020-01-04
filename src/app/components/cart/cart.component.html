@@ -1,9 +1,9 @@
-<div class="cart">
-  Your Box Summary
+<section class="cart">
+  <h3>Your Box Summary</h3>
   <div class="cart-product" *ngFor="let product of cart">
     <img class="cart-product-image" src="{{ product.image }}" alt="" />
     <span>{{ product.name }} x {{ product.quantityOrdered }}</span>
   </div>
-  <p>Your box choice: {{ boxType }}</p>
+  <p class="box-chosen">{{ boxType | capitalise }}</p>
   <p>Total: £{{ price }}</p>
-</div>
+</section>

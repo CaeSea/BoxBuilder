@@ -1,13 +1,13 @@
 <div class="page-strapline">
   <h1>Build your box</h1>
   <h2>
-    You have chosen our <span>{{ boxType }}</span> box.
+    You have chosen our <span>{{ boxType | capitalise }}</span> Box.
   </h2>
   <p>Pick 3 products from the options below, then click next.</p>
 </div>
 
 <div class="content-wrapper">
-  <section class="product-accordion">
+  <section class="main-items-wrapper">
     <div class="product-list">
       <ng-container *ngFor="let index of accordionCountArray">
         <div class="accordion-products-wrapper accordion-{{ index + 1 }}">

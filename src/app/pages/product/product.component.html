@@ -1,27 +1,34 @@
-<h3>{{ product.name }}</h3>
-<img src="{{ product.image }}" alt="{{ product.name }}" />
-<div>
-  <button class="button-add" *ngIf="!productInCart" (click)="addToCart()">
-    Add
-  </button>
-  <button
-    class="button-add"
-    *ngIf="productInCart && product.max !== product.quantityOrdered"
-    (click)="addToCart()"
-  >
-    Add another
-  </button>
-  <button
-    *ngIf="productInCart"
-    (click)="
-      product.quantityOrdered === 1
-        ? removeFromCart(true)
-        : removeFromCart(false)
-    "
-  >
-    Remove
-  </button>
-  <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
-    Remove All
-  </button>
+<div class="product-name">
+  <h3>{{ product.name }}</h3>
+</div>
+
+<div class="product-info">
+  <img
+    class="product-image"
+    src="{{ product.image }}"
+    alt="{{ product.name }}"
+  />
+  <div>
+    <button
+      class="button-add"
+      *ngIf="product.max !== product.quantityOrdered"
+      (click)="addToCart()"
+    >
+      Add
+    </button>
+    <button
+      *ngIf="productInCart"
+      (click)="
+        product.quantityOrdered === 1
+          ? removeFromCart(true)
+          : removeFromCart(false)
+      "
+    >
+      Remove
+    </button>
+    <button *ngIf="cartQuantity > 1" (click)="removeFromCart(true)">
+      Remove All
+    </button>
+    <button class="view-details">Product details</button>
+  </div>
 </div>

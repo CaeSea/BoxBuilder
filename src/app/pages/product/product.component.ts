@@ -27,7 +27,6 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.checkIfInCart();
-    console.log(this.product);
   }
 
   addToCart(): void {
@@ -57,6 +56,7 @@ export class ProductComponent implements OnInit {
 
     if (removeAll) {
       this.productInCart = false;
+      this.product.quantityOrdered = 0;
       mode = "minusAll";
     } else {
       if (this.cartQuantity >= 2) {

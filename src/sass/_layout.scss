@@ -13,4 +13,22 @@ main.main-wrapper {
       }
     }
   }
+
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    section.main-items-wrapper {
+      width: 85%;
+    }
+
+    section.cart-wrapper {
+      width: 15%;
+
+      p.box-chosen {
+        color: $purple;
+        font-weight: 600;
+      }
+    }
+  }
 }

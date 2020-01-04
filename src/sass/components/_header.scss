@@ -17,7 +17,6 @@ header#main-header {
   }
 
   nav.main-nav {
-    width: 100%;
     margin-top: auto;
     padding: 0 7px 7px 7px;
     background-color: white;
@@ -26,6 +25,7 @@ header#main-header {
     border-bottom-right-radius: 100%;
     background-color: $charcoal;
     text-align: center;
+    box-shadow: 0 8px 9px -2px rgba(0, 0, 0, 0.4);
 
     a {
       color: white;
