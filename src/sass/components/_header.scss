@@ -1,0 +1,37 @@
+@import "../variables";
+
+header#main-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .logo-holder {
+    padding: 7px 7px 0 7px;
+    min-height: 60px;
+    background-color: $charcoal;
+    text-align: center;
+
+    h1 {
+      color: white;
+    }
+  }
+
+  nav.main-nav {
+    width: 100%;
+    margin-top: auto;
+    padding: 0 7px 7px 7px;
+    background-color: white;
+    height: 30px;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background-color: $charcoal;
+    text-align: center;
+
+    a {
+      color: white;
+      padding-right: 15px;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+  }
+}

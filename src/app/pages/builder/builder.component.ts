@@ -26,30 +26,6 @@ export class BuilderComponent implements OnInit {
     this.setUpNumberOfAccordions();
   }
 
-  makeTitle(index: number): string {
-    console.log(index);
-    let title: string;
-    index = index + 1;
-    switch (index) {
-      case 1:
-        title = `${index}. Let's get started!`;
-        break;
-      case 2:
-        title = `${index}. And another...`;
-        break;
-      case 3:
-        title = `${index}. Get some more!`;
-        break;
-      case 4:
-        title = `${index}. More!`;
-        break;
-      case 5:
-        title = `${index}. Last one, make it count!`;
-        break;
-    }
-    return title;
-  }
-
   checkBoxTypeChosen(): void {
     this.boxType = this.route.snapshot.paramMap.get("type");
     this.setBoxType(this.boxType);

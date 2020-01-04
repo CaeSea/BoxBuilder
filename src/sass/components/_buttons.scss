@@ -1,0 +1,17 @@
+button {
+  border: none;
+  background: none;
+
+  &.button-add {
+    background-color: $purple;
+    padding: 7px 15px;
+    color: white;
+    border-radius: 5px;
+    min-width: 50px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $purple-dark;
+    }
+  }
+}

@@ -1,8 +1,8 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
+@import "~normalize.css";
 
 @import "./sass/layout";
+@import "./sass/global";
+// Components
+@import "./sass/components/header";
+@import "./sass/components/builder";
+@import "./sass/components/buttons";

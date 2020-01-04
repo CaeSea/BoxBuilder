@@ -1,30 +1,27 @@
-<h1>Build your box</h1>
-<h2>You have chosen {{ boxType }}</h2>
+<div class="page-strapline">
+  <h1>Build your box</h1>
+  <h2>
+    You have chosen our <span>{{ boxType }}</span> box.
+  </h2>
+  <p>Pick 3 products from the options below, then click next.</p>
+</div>
 
 <div class="content-wrapper">
   <section class="product-accordion">
-    <h2>{{ makeTitle(index) }}</h2>
-
     <div class="product-list">
       <ng-container *ngFor="let index of accordionCountArray">
-        <div
-          class="products-wrapper products-wrapper-{{ index + 1 }}"
-          *ngFor="let product of sortedAccProducts[index]"
-        >
-          <app-product
-            [index]="index"
-            [product]="product"
-            (disableButtonsChange)="addDisableButtonsClass($event)"
+        <div class="accordion-products-wrapper accordion-{{ index + 1 }}">
+          <div
+            class="product-wrapper"
+            *ngFor="let product of sortedAccProducts[index]"
           >
-          </app-product>
-        </div>
-        <div class="stepper-buttons-wrapper">
-          <button id="step-back" class="stepper-button">
-            Previous
-          </button>
-          <button id="step-next" class="stepper-button">
-            Next
-          </button>
+            <app-product
+              [index]="index"
+              [product]="product"
+              (disableButtonsChange)="addDisableButtonsClass($event)"
+            >
+            </app-product>
+          </div>
         </div>
       </ng-container>
     </div>
