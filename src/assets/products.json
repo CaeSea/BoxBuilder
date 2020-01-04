@@ -166,6 +166,56 @@
       "package": ["basic", "classic", "premium"],
       "stock": 20,
       "max": 3
+    },
+    {
+      "productId": 16,
+      "name": "Art Print",
+      "price": 266.0,
+      "image": "https://media.4rgos.it/i/Argos/4031013_R_Z001A?w=750&h=440&qlt=70",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20,
+      "max": 3
+    },
+    {
+      "productId": 16,
+      "name": "Art Print",
+      "price": 266.0,
+      "image": "https://media.4rgos.it/i/Argos/4031013_R_Z001A?w=750&h=440&qlt=70",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20,
+      "max": 3
+    },
+    {
+      "productId": 16,
+      "name": "Art Print",
+      "price": 266.0,
+      "image": "https://media.4rgos.it/i/Argos/4031013_R_Z001A?w=750&h=440&qlt=70",
+      "accordion": 1,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20,
+      "max": 3
+    },
+    {
+      "productId": 16,
+      "name": "Art Print",
+      "price": 266.0,
+      "image": "https://media.4rgos.it/i/Argos/4031013_R_Z001A?w=750&h=440&qlt=70",
+      "accordion": 2,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20,
+      "max": 3
+    },
+    {
+      "productId": 16,
+      "name": "Art Print",
+      "price": 266.0,
+      "image": "https://media.4rgos.it/i/Argos/4031013_R_Z001A?w=750&h=440&qlt=70",
+      "accordion": 2,
+      "package": ["basic", "classic", "premium"],
+      "stock": 20,
+      "max": 3
     }
   ]
 }

@@ -23,8 +23,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": [],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/slick-carousel/slick/slick.css",
+              "./node_modules/slick-carousel/slick/slick-theme.css"
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/slick-carousel/slick/slick.min.js",
+              "./src/assets/js/custom-slick.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
